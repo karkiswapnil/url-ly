@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>url.ly</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>url.ly - Short urls for your code</h1>
+      <h1>url.ly - Short urls for your code</h1>
     </header>
 
-</body>
+    <main id="app">
+      <form @submit.prevent="createUrl()">
+        <label for="url">Url</label>
+        <input type="text" v-model="url" name="url" id="url" />
+        <label for="slug">Slug</label>
+        <input type="text" v-model="slug" name="slug" id="slug" />
+        <button type="submit">Create</button>
+      </form>
+      <pre v-if="created">
+            {{JSON.stringify(created,null,2)}}
+        </pre
+      >
+    </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
